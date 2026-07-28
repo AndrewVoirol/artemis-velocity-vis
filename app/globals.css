@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-space), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+body {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Custom Leaflet styles for e-ink vibe */
+.leaflet-container {
+  background: #f8f8f8 !important;
+}
+
+.leaflet-control-attribution {
+  background: rgba(255, 255, 255, 0.8) !important;
+  color: #000 !important;
+  font-family: var(--font-mono) !important;
+  font-size: 10px !important;
+}

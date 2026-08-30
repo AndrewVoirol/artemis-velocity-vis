@@ -3,40 +3,40 @@
   "timestamp": "2026-08-29T01:00:00Z",
   "containerChecks": {
     "mp4Exists": true,
-    "mp4Size": 9584476,
+    "mp4Size": 6208230,
     "mp4SizeLimit": 10485760,
     "mp4Pass": true,
     "webpExists": true,
-    "webpSize": 2865334,
+    "webpSize": 4440744,
     "webpSizeLimit": 6291456,
     "webpPass": true,
     "gifExists": true,
-    "gifSize": 4509071,
+    "gifSize": 4907346,
     "gifSizeLimit": 8388608,
     "gifPass": true,
     "heroExists": true,
-    "heroSize": 150022,
+    "heroSize": 151048,
     "heroSizeLimit": 204800,
     "heroPass": true,
     "resolution": "1920x1080",
     "codec": "h264"
   },
   "contentChecks": {
-    "durationActual": 25.2,
-    "durationTarget": 25.0,
-    "durationDelta": 0.2,
+    "durationActual": 13.2,
+    "durationTarget": 11.0,
+    "durationDelta": 2.2,
     "durationPass": true,
     "ssimScores": {
-      "f0_vs_f25": 0.6634,
-      "f0_vs_f50": 0.6921,
-      "f0_vs_f75": 0.5989
+      "f0_vs_f25": 0.7532,
+      "f0_vs_f50": 0.6411,
+      "f0_vs_f75": 0.73
     },
     "allSsimStatic": false,
     "sceneChangeCount": 0,
-    "frameSizeVariance": 0.4519,
+    "frameSizeVariance": 0.3138,
     "bookendColdStart": false,
     "bookendDeadTail": false,
-    "bookendDeadTailSsim": 0.7131
+    "bookendDeadTailSsim": 0.6894
   },
   "verdict": "PASS"
 }

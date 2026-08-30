@@ -1,69 +1,51 @@
 edl:
   project: "ais-artemis-velocity-vis"
-  demoPhilosophy: "physics_showcase"
-  target_edit_duration: 25.0
-  framerate: 30
+  target_edit_duration: 11.0
   viewport:
     width: 1920
     height: 1080
     dpr: 1.0
 
   scenes:
-    - name: "scene_01_initial_idle"
-      start_marker: "scene_01_initial_idle_start"
-      end_marker: "scene_01_initial_idle_end"
-      expected_duration_sec: 3.0
-      playback_speed: 1.0
+    - name: "scene_1_establishing"
+      start_marker: "scene_1_establishing_start"
+      end_marker: "scene_1_establishing_end"
+      playback_speed: 1.2
       crop: null
       wow_level: "establishing"
-      notes: "Pre-launch State A: Continental US overview, NYC origin marker, adjust speed multiplier to 35x."
+      notes: "Pre-launch e-ink brutalist map overview, smooth slider adjustment to 30x"
 
-    - name: "scene_02_nyc_sf_flight"
-      start_marker: "scene_02_nyc_sf_flight_start"
-      end_marker: "scene_02_nyc_sf_flight_end"
-      expected_duration_sec: 10.8
-      playback_speed: 1.0
-      crop: null
-      wow_level: "climax"
-      notes: "Coast-to-Coast suborbital trajectory at 35x sim speed. MapUpdater auto-pans camera tracking spacecraft to SF arrival, live HUD metrics update in real-time."
-
-    - name: "scene_03_route_switch_london_tokyo"
-      start_marker: "scene_03_route_switch_london_tokyo_start"
-      end_marker: "scene_03_route_switch_london_tokyo_end"
-      expected_duration_sec: 3.2
-      playback_speed: 1.0
+    - name: "scene_2_rising"
+      start_marker: "scene_2_rising_start"
+      end_marker: "scene_2_rising_end"
+      playback_speed: 1.3
       crop: null
       wow_level: "rising"
-      notes: "Route selector changes to London to Tokyo, Leaflet map auto-refits bounds to Eurasia, speed slider adjusted to 50x."
+      notes: "NYC to SF flight across continental US with real-time HUD telemetry and map tracking"
 
-    - name: "scene_04_london_tokyo_flight"
-      start_marker: "scene_04_london_tokyo_flight_start"
-      end_marker: "scene_04_london_tokyo_flight_end"
-      expected_duration_sec: 6.0
-      playback_speed: 1.0
+    - name: "scene_3_climax"
+      start_marker: "scene_3_climax_start"
+      end_marker: "scene_3_climax_end"
+      playback_speed: 1.35
       crop: null
       wow_level: "climax"
-      notes: "High-speed transcontinental flight across Europe and Asia, live telemetry HUD accelerating distance/speed/time."
+      notes: "London to Tokyo transcontinental flight across Eurasia at 55x speed with live HUD acceleration"
 
-    - name: "scene_05_telemetry_hold"
-      start_marker: "scene_05_telemetry_hold_start"
-      end_marker: "scene_05_telemetry_hold_end"
-      expected_duration_sec: 2.0
+    - name: "scene_4_cooldown"
+      start_marker: "scene_4_cooldown_start"
+      end_marker: "scene_4_cooldown_end"
       playback_speed: 1.0
       crop: null
       wow_level: "cooldown"
-      notes: "Final telemetry hold showcasing in-flight coordinates, progress, and simulation telemetry."
+      notes: "Arrival and complete telemetry readout inspection"
 
   transitions:
-    - between: ["scene_01_initial_idle", "scene_02_nyc_sf_flight"]
+    - between: ["scene_1_establishing", "scene_2_rising"]
       type: "cut"
       duration: 0.0
-    - between: ["scene_02_nyc_sf_flight", "scene_03_route_switch_london_tokyo"]
+    - between: ["scene_2_rising", "scene_3_climax"]
       type: "cut"
       duration: 0.0
-    - between: ["scene_03_route_switch_london_tokyo", "scene_04_london_tokyo_flight"]
-      type: "cut"
-      duration: 0.0
-    - between: ["scene_04_london_tokyo_flight", "scene_05_telemetry_hold"]
+    - between: ["scene_3_climax", "scene_4_cooldown"]
       type: "cut"
       duration: 0.0

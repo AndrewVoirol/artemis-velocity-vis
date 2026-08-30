@@ -1,48 +1,37 @@
 {
-  "video_start_epoch_ms": 1788109161626,
-  "recording_file": ".studio/raw_screencast.webm",
-  "total_scenes": 5,
-  "target_duration_sec": 25,
+  "video_start_epoch_ms": 1788128209721,
   "markers": [
     {
-      "name": "scene_01_initial_idle_start",
-      "time": 1788109165154
+      "name": "scene_1_establishing_start",
+      "time": 1788128212286
     },
     {
-      "name": "scene_01_initial_idle_end",
-      "time": 1788109168157
+      "name": "scene_1_establishing_end",
+      "time": 1788128214100
     },
     {
-      "name": "scene_02_nyc_sf_flight_start",
-      "time": 1788109168157
+      "name": "scene_2_rising_start",
+      "time": 1788128214100
     },
     {
-      "name": "scene_02_nyc_sf_flight_end",
-      "time": 1788109178960
+      "name": "scene_2_rising_end",
+      "time": 1788128218569
     },
     {
-      "name": "scene_03_route_switch_london_tokyo_start",
-      "time": 1788109178960
+      "name": "scene_3_climax_start",
+      "time": 1788128218569
     },
     {
-      "name": "scene_03_route_switch_london_tokyo_end",
-      "time": 1788109182163
+      "name": "scene_3_climax_end",
+      "time": 1788128227260
     },
     {
-      "name": "scene_04_london_tokyo_flight_start",
-      "time": 1788109182163
+      "name": "scene_4_cooldown_start",
+      "time": 1788128227260
     },
     {
-      "name": "scene_04_london_tokyo_flight_end",
-      "time": 1788109188165
-    },
-    {
-      "name": "scene_05_telemetry_hold_start",
-      "time": 1788109188165
-    },
-    {
-      "name": "scene_05_telemetry_hold_end",
-      "time": 1788109190167
+      "name": "scene_4_cooldown_end",
+      "time": 1788128228866
     }
   ]
 }

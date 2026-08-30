@@ -15,6 +15,10 @@ body {
   background: #f8f8f8 !important;
 }
 
+.leaflet-tile {
+  filter: grayscale(100%) contrast(120%) brightness(102%);
+}
+
 .leaflet-control-attribution {
   background: rgba(255, 255, 255, 0.8) !important;
   color: #000 !important;

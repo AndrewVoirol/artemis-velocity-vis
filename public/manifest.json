@@ -1,0 +1,16 @@
+{
+  "name": "Artemis Velocity Vis",
+  "short_name": "Artemis Vis",
+  "description": "Real-time simulation of Artemis II speed",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

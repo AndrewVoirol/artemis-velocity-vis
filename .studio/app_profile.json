@@ -1,0 +1,106 @@
+{
+  "project": "ais-artemis-velocity-vis",
+  "project_name": "ais-artemis-velocity-vis",
+  "framework": "Next.js 15.4.9 (App Router) + React 19.2.1 + Tailwind CSS v4",
+  "devServerCommand": "npm run dev",
+  "demoPhilosophy": "physics_showcase",
+  "archetype": "map_trajectory_simulation",
+  "hasCanvas": false,
+  "canvasType": "none",
+  "is_map_based": true,
+  "map_engine": "Leaflet 1.9.4 / react-leaflet 5.0.0",
+  "speed_mph": 24500,
+  "speed_mps": 6.805555555555555,
+  "hasPhysicsSimulation": true,
+  "physicsCharacteristics": {
+    "solvers": [
+      "Spherical Haversine Great Circle geodesic arc interpolation",
+      "Spherical intermediate coordinate position interpolation",
+      "requestAnimationFrame delta-time integration",
+      "Leaflet MapUpdater animated viewport tracking (panTo)"
+    ],
+    "speed_mph": 24500,
+    "speed_mps": 6.805555555555555,
+    "recommendedMultiplier": 35
+  },
+  "routes": [
+    {
+      "id": "nyc_sf",
+      "name": "Coast to Coast (NYC to SF)",
+      "start": [40.7128, -74.0060],
+      "end": [37.7749, -122.4194],
+      "distance_mi": 2572.2,
+      "duration_1x_sec": 377.96,
+      "duration_35x_sec": 10.80
+    },
+    {
+      "id": "london_tokyo",
+      "name": "London to Tokyo",
+      "start": [51.5074, -0.1278],
+      "end": [35.6762, 139.6503],
+      "distance_mi": 5956.1,
+      "duration_1x_sec": 875.18,
+      "duration_35x_sec": 25.01
+    }
+  ],
+  "state_a": {
+    "title": "Pre-Launch Idle",
+    "description": "Default NYC to SF route selected, 0% progress, 0 distance, spacecraft marker stationary at origin, LAUNCH button ready, map showing continental US bounds"
+  },
+  "state_b": {
+    "title": "High-Speed In-Flight Telemetry",
+    "description": "Spacecraft traversing Great-Circle arc at 25x-50x multiplier, live telemetry HUD updating distance/time/ETA in real time, expanding progress bar, map auto-panning smoothly with spacecraft position"
+  },
+  "controls": {
+    "route_select": {
+      "selector": "select",
+      "type": "select"
+    },
+    "speed_slider": {
+      "selector": "input[type=\"range\"]",
+      "type": "range",
+      "min": 1,
+      "max": 100
+    },
+    "launch_button": {
+      "selector": "button:has-text(\"LAUNCH\"), button:has-text(\"PAUSE\")",
+      "type": "button"
+    },
+    "reset_button": {
+      "selector": "button:has-text(\"RESET\")",
+      "type": "button"
+    },
+    "map_container": {
+      "selector": ".leaflet-container",
+      "type": "map"
+    }
+  },
+  "viewport": {
+    "width": 1920,
+    "height": 1080,
+    "dpr": 1
+  },
+  "theme": "light / neo-brutalist",
+  "darkModeType": "none",
+  "temporalSignatures": {
+    "continuousLoops": [
+      {
+        "file": "app/page.tsx",
+        "line": 44,
+        "pattern": "requestAnimationFrame(animate) simulation clock delta integration"
+      },
+      {
+        "file": "components/Map.tsx",
+        "line": 20,
+        "pattern": "MapUpdater map.panTo(currentPos, { animate: true, duration: 0.5 })"
+      }
+    ],
+    "detailIndicators": [
+      {
+        "file": "app/page.tsx",
+        "line": 141,
+        "pattern": "Telemetry HUD: Speed (24,500 mph), Dist (mi), Time (s), Progress (%), ETA (s)"
+      }
+    ]
+  }
+}

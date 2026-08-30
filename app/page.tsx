@@ -74,9 +74,7 @@ export default function Home() {
 
   // Reset when route changes
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsRunning(false);
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     setElapsedTime(0);
     lastTimeRef.current = null;
   }, [selectedRoute]);

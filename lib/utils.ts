@@ -1,9 +1,3 @@
-import { clsx, type ClassValue } from "clsx"
-import { twMerge } from "tailwind-merge"
-
-export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
-}
 
 // Calculates distance in miles between two lat/lon points
 export function calculateDistance(lat1: number, lon1: number, lat2: number, lon2: number): number {

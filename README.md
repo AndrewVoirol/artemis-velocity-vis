@@ -1,40 +1,75 @@
-# Artemis Velocity Vis
+# 🚀 Artemis Velocity Vis
 
-An interactive visualization that demonstrates the speed of NASA's Artemis II spacecraft by simulating it traveling between real locations on Earth.
+![Artemis Velocity Vis Demo](screenshots/demo.gif)
 
-**Speed: 24,500 mph** — watch the spacecraft cross continents in seconds.
+An interactive visualization that puts NASA's Artemis II re-entry speed into perspective by simulating the spacecraft traveling between real locations on Earth.
+
+**How fast is 24,500 mph?** Launch the simulation and find out — the spacecraft crosses the continental United States in about 6 minutes.
+
+---
 
 ## Features
 
-- **Geodesic trajectories** — routes follow true great-circle arcs, not straight lines on a flat projection
-- **Live camera tracking** — the map pans to follow the spacecraft in real time
-- **Telemetry dashboard** — distance, elapsed time, ETA, and progress displayed live
-- **Adjustable simulation speed** — 1× to 100× time multiplier
-- **Two preset routes** — NYC → San Francisco and London → Tokyo
+- **Geodesic trajectories** — routes follow true great-circle arcs via spherical intermediate interpolation, not flat map projections
+- **Live camera tracking** — the viewport pans dynamically to follow the spacecraft marker in flight
+- **Real-time telemetry HUD** — distance covered, elapsed time, live ETA, and progress bar update continuously
+- **Adjustable simulation speed** — 1× to 100× time multiplier so you can watch at your own pace
+- **Multi-route presets** — Coast-to-Coast (NYC → SF) and Transcontinental (London → Tokyo)
 
-## Tech Stack
+### Coast to Coast (NYC → San Francisco)
 
-- [Next.js 15](https://nextjs.org/) + [React 19](https://react.dev/)
-- [Leaflet](https://leafletjs.com/) via [react-leaflet](https://react-leaflet.js.org/)
-- [Tailwind CSS v4](https://tailwindcss.com/)
-- [TypeScript](https://www.typescriptlang.org/)
+![Initial state — NYC to San Francisco route](screenshots/initial-state.png)
 
-## Getting Started
+### In-Flight Telemetry & Dynamic Tracking
+
+![Mid-flight — spacecraft over the Midwest with live telemetry](screenshots/mid-flight.png)
+
+### Transcontinental Route (London → Tokyo)
+
+![London to Tokyo route across Eurasia](screenshots/hero.webp)
+
+---
+
+## Quick Start
+
+You need [Node.js](https://nodejs.org/) (v18+).
 
 ```bash
-# Install dependencies
+git clone https://github.com/AndrewVoirol/artemis-velocity-vis.git
+cd artemis-velocity-vis
 npm install
-
-# Run the dev server
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to see the visualization.
+Open **http://localhost:3000** — that's it.
+
+---
 
 ## How It Works
 
-The app computes the [Haversine distance](https://en.wikipedia.org/wiki/Haversine_formula) between two coordinates, then animates the spacecraft along the [great-circle path](https://en.wikipedia.org/wiki/Great-circle_distance) at 24,500 mph using spherical interpolation (slerp). A `requestAnimationFrame` loop drives the simulation clock.
+1. Pick a route from the dropdown (or stick with the default NYC → SF)
+2. Hit **LAUNCH**
+3. Watch the spacecraft marker fly along the great-circle arc while telemetry updates live
+4. Drag the **Sim Speed** slider to speed things up or slow them down
+5. Hit **PAUSE** to freeze, **RESET** to start over
+
+Under the hood, the app computes the [Haversine distance](https://en.wikipedia.org/wiki/Haversine_formula) between coordinate pairs, then animates the spacecraft along the [great-circle path](https://en.wikipedia.org/wiki/Great-circle_distance) at 24,500 mph (6.81 mi/s) using spherical intermediate interpolation. A `requestAnimationFrame` loop drives the simulation clock with sub-millisecond precision.
+
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Framework | [Next.js 15](https://nextjs.org/) + [React 19](https://react.dev/) |
+| Map | [Leaflet](https://leafletjs.com/) via [react-leaflet](https://react-leaflet.js.org/) |
+| Styling | [Tailwind CSS v4](https://tailwindcss.com/) |
+| Icons | [Lucide React](https://lucide.dev/) |
+| Language | [TypeScript](https://www.typescriptlang.org/) |
+
+---
 
 ## License
 
-[MIT](LICENSE)
+[MIT](LICENSE) — Andrew Voirol
+

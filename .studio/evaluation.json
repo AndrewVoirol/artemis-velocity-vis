@@ -1,0 +1,120 @@
+{
+  "timestamp": "2026-08-30T17:34:30Z",
+  "project": "ais-artemis-velocity-vis",
+  "archetype": "map_trajectory_simulation",
+  "pipelineMode": "demo",
+  "overallVerdict": "PASS",
+  "overallStatus": "SUCCESS",
+  "requirements": {
+    "R1_FullStudioOrchestrationLifecycle": {
+      "phase0_discovery": {
+        "status": "COMPLETED",
+        "artifact": ".studio/app_profile.json",
+        "archetype": "map_trajectory_simulation",
+        "verified": true
+      },
+      "phase1_scripting_and_review": {
+        "status": "COMPLETED",
+        "artifacts": [".studio/choreography.json", ".studio/edl.yaml", ".studio/critic_pre_capture.md"],
+        "preCaptureCriticVerdict": "PASS",
+        "verified": true
+      },
+      "phase2_playwright_capture": {
+        "status": "COMPLETED",
+        "artifacts": [".studio/capture_script.js", ".studio/raw_screencast.webm", ".studio/capture_timeline.json"],
+        "recordingDurationSec": 29.88,
+        "choreographyDurationSec": 25.013,
+        "gate1Verified": true
+      },
+      "phase3_compression_and_verification": {
+        "status": "COMPLETED",
+        "artifacts": ["deliverables/demo.mp4", "deliverables/demo.webp", "deliverables/demo.gif", "deliverables/hero.webp", ".studio/validation.json", ".studio/critic_post_edit.md"],
+        "postEditCriticVerdict": "PASS",
+        "gitHubTestResult": "PASS",
+        "gate2Verified": true
+      },
+      "phase4_teardown_and_telemetry": {
+        "status": "COMPLETED",
+        "artifacts": [".studio/Studio_Telemetry.md", ".studio/evaluation.json", ".studio/pipeline_complete"],
+        "verified": true
+      }
+    },
+    "R2_DeterministicMediaDeliverables": {
+      "status": "COMPLETED",
+      "verified": true
+    }
+  },
+  "acceptanceCriteria": {
+    "deliverableCeilingsAndCompleteness": {
+      "demoMp4": {
+        "path": "deliverables/demo.mp4",
+        "exists": true,
+        "codec": "h264",
+        "resolution": "1920x1080",
+        "sizeBytes": 9584476,
+        "limitBytes": 10485760,
+        "pass": true
+      },
+      "demoWebp": {
+        "path": "deliverables/demo.webp",
+        "exists": true,
+        "format": "animated_webp",
+        "resolution": "640x360",
+        "sizeBytes": 2865334,
+        "limitBytes": 3145728,
+        "pass": true
+      },
+      "demoGif": {
+        "path": "deliverables/demo.gif",
+        "exists": true,
+        "format": "gif",
+        "resolution": "400x225",
+        "sizeBytes": 4509071,
+        "limitBytes": 5242880,
+        "pass": true
+      },
+      "heroWebp": {
+        "path": "deliverables/hero.webp",
+        "exists": true,
+        "format": "webp_image",
+        "resolution": "1920x1080",
+        "sizeBytes": 150022,
+        "limitBytes": 204800,
+        "pass": true
+      },
+      "screenshotsMirrored": true
+    },
+    "visualQualityAndVerification": {
+      "multiFrameSsimPass": true,
+      "pairwiseSsimScores": {
+        "f0_vs_f25": 0.6634,
+        "f0_vs_f50": 0.6921,
+        "f0_vs_f75": 0.5989
+      },
+      "ssimCeiling": 0.97,
+      "allSsimStatic": false,
+      "noBlankOrDeadAir": true,
+      "bookendColdStart": false,
+      "bookendDeadTail": false,
+      "postEditCriticVerdict": "PASS",
+      "gitHubTestPass": true,
+      "validationReportGenerated": true,
+      "validationReportVerdict": "PASS",
+      "structuralErrors": 0
+    },
+    "hygieneAndTeardown": {
+      "devServerPidTerminated": true,
+      "danglingProcessesCount": 0,
+      "port3000Free": true,
+      "pidFilesRemoved": true,
+      "tmpFilesPurged": true,
+      "pipelineCompleteSignaled": true
+    }
+  },
+  "summary": {
+    "totalAcceptanceCriteriaChecked": 11,
+    "totalPassed": 11,
+    "totalFailed": 0,
+    "structuralErrors": 0
+  }
+}

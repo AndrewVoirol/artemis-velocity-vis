@@ -16,6 +16,10 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: 'Artemis Velocity Vis',
   description: 'Real-time simulation of Artemis II speed',
+  icons: {
+    icon: '/favicon.svg',
+  },
+  manifest: '/manifest.json',
 };
 
 export default function RootLayout({children}: {children: React.ReactNode}) {

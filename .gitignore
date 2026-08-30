@@ -4,3 +4,8 @@ coverage/
 .DS_Store
 *.log
 .env.local
+.agents/
+*.tsbuildinfo
+.studio/tmp/
+.studio/*.webm
+.studio/*.log

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { MapContainer, TileLayer, Polyline, Marker, useMap } from 'react-leaflet';
 import L from 'leaflet';
 
@@ -26,15 +26,6 @@ function MapUpdater({ currentPos }: { currentPos: [number, number] }) {
 }
 
 export default function Map({ arcPoints, currentPos }: MapProps) {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return <div className="w-full h-full bg-[#f8f8f8]" />;
-
   // Compute bounds from all arc points
   const bounds = L.latLngBounds(arcPoints.map(p => L.latLng(p[0], p[1]))).pad(0.2);
 
@@ -46,8 +37,8 @@ export default function Map({ arcPoints, currentPos }: MapProps) {
       zoomControl={false}
     >
       <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
-        url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       <Polyline positions={arcPoints} pathOptions={{ color: 'black', weight: 3, dashArray: '8, 8' }} />
       <Marker position={currentPos} icon={spacecraftIcon} />

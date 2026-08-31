@@ -1,42 +1,6 @@
 {
-  "project": "ais-artemis-velocity-vis",
-  "evaluation_timestamp": "2026-08-30T18:29:40-04:00",
-  "overall_verdict": "PASS",
-  "checkpoints": {
-    "host_binary_preflight": true,
-    "archetype_discovery": true,
-    "demo_philosophy_routing": true,
-    "choreography_pre_capture_critique": "PASS",
-    "playwright_recording": true,
-    "director_gate_1_visual_qc": "PASS",
-    "deterministic_compression": true,
-    "director_gate_2_content_qc": "PASS",
-    "validator_scorecard": "PASS",
-    "post_edit_critique": "PASS",
-    "process_and_port_hygiene": true,
-    "e_ink_aesthetic_verified": true,
-    "gif_resolution_800px_verified": true
-  },
-  "deliverables": {
-    "demo_mp4": {
-      "path": "deliverables/demo.mp4",
-      "size_bytes": 6208230,
-      "resolution": "1920x1080"
-    },
-    "demo_webp": {
-      "path": "deliverables/demo.webp",
-      "size_bytes": 4440744,
-      "resolution": "800x450"
-    },
-    "demo_gif": {
-      "path": "deliverables/demo.gif",
-      "size_bytes": 4907346,
-      "resolution": "800x450"
-    },
-    "hero_webp": {
-      "path": "deliverables/hero.webp",
-      "size_bytes": 151048,
-      "resolution": "1920x1080"
-    }
-  }
+  "verdict": "PASS",
+  "githubTest": "PASS - Crystal-clear orbital mechanics simulation demonstrating great-circle geodesics vs flat Mercator distortion",
+  "allCeilingsMet": true,
+  "zeroBuildErrors": true
 }

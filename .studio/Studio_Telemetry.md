@@ -1,31 +1,36 @@
-# Studio Telemetry: ais-artemis-velocity-vis
+# Studio Execution Telemetry — Artemis Velocity Vis Orbital Mechanics Laboratory
 
-- **Project**: ais-artemis-velocity-vis
-- **Archetype**: map_trajectory_simulation
-- **Demo Philosophy**: physics_showcase
-- **Execution Date**: 2026-08-30
-- **Overall Status**: SUCCESS (PASS)
+- **Execution Date**: 2026-08-31T22:08:44.230Z
+- **Archetype**: map-based trajectory simulator / orbital mechanics laboratory
+- **Overall Status**: PASS (100% Verification Criteria Met)
 
----
+## Deliverables Summary
 
-## 1. Production Milestones
-| Milestone | Status | Details |
-|---|---|---|
-| Phase 0: Discovery | PASS | Identified State A/B, spherical geodesic math, e-ink brutalist map styling |
-| Phase 1: Scripting | PASS | Choreography (11.0s target) and EDL validated with Pre-Capture Critic |
-| Phase 2: Autonomous Capture | PASS | Playwright recording with StudioInteractionEngine, visual cursor, and React 19 synthetic event dispatch |
-| Gate 1: Post-Capture Visual QC | PASS | 25%, 50%, 75% frames verified non-blank with active flight tracking |
-| Phase 3: Post-Production & QA | PASS | Deterministic multi-tier compression with 800px GIF ladder |
-| Gate 2: Content Quality QC | PASS | Scene midpoints verified distinct and high-contrast |
-| Deterministic Validator | PASS | Container ceilings, duration tolerance (13.2s vs 11.0s), SSIM diversity (f0 vs f25=0.753, f50=0.641, f75=0.730) |
-| Post-Edit Critic | PASS | Verified 800px width, e-ink aesthetics, and GitHub 5-second technical wow test |
+| Asset | Path | Size | Ceiling | Status | Dimensions / Specs |
+|---|---|---|---|---|---|
+| **Showcase Video** | `deliverables/demo.mp4` | 2.62 MB | $\le 10.0\text{ MB}$ | **PASS** | 1920x1080, H.264, 13.56s, CRF 20, +faststart |
+| **Animated WebP** | `deliverables/demo.webp` | 2.09 MB | $\le 3.0\text{ MB}$ | **PASS** | 800x450, 12fps, q=65, loop=0 |
+| **Screenshot WebP** | `screenshots/demo.webp` | 2.09 MB | $\le 5.0\text{ MB}$ | **PASS** | 800x450, 12fps, q=65, loop=0 |
+| **Repository GIF** | `deliverables/demo.gif` | 3.71 MB | $\le 5.0\text{ MB}$ | **PASS** | 800x450, 10fps, 2-pass palettegen |
+| **Hero Image** | `deliverables/hero.webp` | 59.3 KB | $\le 200.0\text{ KB}$ | **PASS** | 1920x1080, WebP q=85 |
 
----
+## Hero Screenshot Suite
 
-## 2. Deliverable Asset Metrics
-| Asset | File Size | Dimensions | Ceiling | Format / Quality |
-|---|---|---|---|---|
-| `deliverables/demo.mp4` | 5.92 MB (6,208,230 B) | 1920x1080 | 10.0 MB | H.264 / CRF 18 |
-| `deliverables/demo.webp` | 4.23 MB (4,440,744 B) | 800x450 | 6.0 MB | 15 fps / q75 |
-| `deliverables/demo.gif` | 4.68 MB (4,907,346 B) | 800x450 | 5.0 MB | 6 fps / 18 colors / Bayer scale 3 |
-| `deliverables/hero.webp` | 148 KB (151,048 B) | 1920x1080 | 200 KB | Climax Midpoint / q85 |
+| Identifier | Path | Size | Description |
+|---|---|---|---|
+| **Re-entry Telemetry** | `screenshots/artemis-reentry-telemetry.png` | 234.1 KB | Trans-Lunar Return & Skip Entry at 24,500 mph (Mach 31.93), active telemetry HUD, high-altitude re-entry corridor |
+| **Sub-Polar Geodesic** | `screenshots/artemis-london-tokyo-geodesic.png` | 478.0 KB | Trans-Eurasian Orbit Pass (London -> Tokyo), highlighting dramatic sub-polar great-circle arc |
+| **Mission Control Dark** | `screenshots/artemis-mission-control-dark.png` | 312.8 KB | NASA Mission Control Dark theme with radar cyan HUD, amber indicators, and dark matter tiles |
+| **Mercator Distortion** | `screenshots/artemis-geodesic-vs-mercator.png` | 483.3 KB | Geodesic Arc vs Flat Mercator Linear Chord comparison layer enabled, highlighting +18.15% distortion |
+
+## Multi-Frame SSIM Visual Diversity
+
+- `reentry_vs_eurasian`: **0.8399** (Max ceiling: 0.97) — PASS
+- `eurasian_vs_continental`: **0.8259** (Max ceiling: 0.97) — PASS
+- `continental_vs_distortion`: **0.7866** (Max ceiling: 0.97) — PASS
+- **Visual Diversity Verdict**: PASS (Distinct perceptual states demonstrated across all milestones)
+
+## Server Process Hygiene
+- **Dev Server PID**: Cleanly terminated (0 dangling background processes on ports 3000 / 3005).
+- **Temporary Chunks**: Purged from `.studio/tmp/`.
+- **Pipeline Stop Hook**: Signal file `.studio/pipeline_complete` written.

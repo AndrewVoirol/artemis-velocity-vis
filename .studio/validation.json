@@ -1,42 +1,66 @@
 {
-  "pass": true,
-  "timestamp": "2026-08-29T01:00:00Z",
-  "containerChecks": {
-    "mp4Exists": true,
-    "mp4Size": 6208230,
-    "mp4SizeLimit": 10485760,
-    "mp4Pass": true,
-    "webpExists": true,
-    "webpSize": 4440744,
-    "webpSizeLimit": 6291456,
-    "webpPass": true,
-    "gifExists": true,
-    "gifSize": 4907346,
-    "gifSizeLimit": 8388608,
-    "gifPass": true,
-    "heroExists": true,
-    "heroSize": 151048,
-    "heroSizeLimit": 204800,
-    "heroPass": true,
-    "resolution": "1920x1080",
-    "codec": "h264"
-  },
-  "contentChecks": {
-    "durationActual": 13.2,
-    "durationTarget": 11.0,
-    "durationDelta": 2.2,
-    "durationPass": true,
-    "ssimScores": {
-      "f0_vs_f25": 0.7532,
-      "f0_vs_f50": 0.6411,
-      "f0_vs_f75": 0.73
+  "timestamp": "2026-08-31T22:08:44.230Z",
+  "status": "PASS",
+  "deliverables": {
+    "deliverables/demo.mp4": {
+      "sizeBytes": 2745646,
+      "sizeMb": 2.62,
+      "maxAllowedMb": 10,
+      "passSize": true,
+      "durationSec": 13.56,
+      "minDurationSec": 5,
+      "passDuration": true,
+      "codec": "h264",
+      "resolution": "1920x1080"
     },
-    "allSsimStatic": false,
-    "sceneChangeCount": 0,
-    "frameSizeVariance": 0.3138,
-    "bookendColdStart": false,
-    "bookendDeadTail": false,
-    "bookendDeadTailSsim": 0.6894
+    "deliverables/demo.webp": {
+      "sizeBytes": 2196418,
+      "sizeMb": 2.09,
+      "maxAllowedMb": 3,
+      "passSize": true
+    },
+    "screenshots/demo.webp": {
+      "sizeBytes": 2196418,
+      "sizeMb": 2.09,
+      "maxAllowedMb": 5,
+      "passSize": true
+    },
+    "deliverables/demo.gif": {
+      "sizeBytes": 3891787,
+      "sizeMb": 3.71,
+      "maxAllowedMb": 5,
+      "passSize": true
+    },
+    "deliverables/hero.webp": {
+      "sizeBytes": 60678,
+      "sizeKb": 59.3,
+      "maxAllowedKb": 200,
+      "passSize": true
+    }
   },
-  "verdict": "PASS"
+  "screenshots": {
+    "screenshots/artemis-reentry-telemetry.png": {
+      "sizeBytes": 234051,
+      "exists": true
+    },
+    "screenshots/artemis-london-tokyo-geodesic.png": {
+      "sizeBytes": 478007,
+      "exists": true
+    },
+    "screenshots/artemis-mission-control-dark.png": {
+      "sizeBytes": 312829,
+      "exists": true
+    },
+    "screenshots/artemis-geodesic-vs-mercator.png": {
+      "sizeBytes": 483250,
+      "exists": true
+    }
+  },
+  "visualDiversitySsim": {
+    "reentry_vs_eurasian": 0.83986,
+    "eurasian_vs_continental": 0.825873,
+    "continental_vs_distortion": 0.786599,
+    "maxAllowedSsim": 0.97,
+    "passDiversity": true
+  }
 }

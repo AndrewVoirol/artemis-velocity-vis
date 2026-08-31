@@ -5,23 +5,215 @@
   --font-mono: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
+:root {
+  --e-ink-bg: #ffffff;
+  --e-ink-fg: #000000;
+  --e-ink-border: #000000;
+  
+  --nasa-bg: #030712;
+  --nasa-sidebar: #070b14;
+  --nasa-panel: #0f172a;
+  --nasa-border: #1e293b;
+  --nasa-cyan: #00f0ff;
+  --nasa-amber: #fbbf24;
+  
+  --sat-bg: #090d16;
+  --sat-sidebar: #0d131f;
+  --sat-panel: #161f30;
+  --sat-border: #24324a;
+  --sat-gold: #facc15;
+  --sat-lime: #84cc16;
+}
+
 body {
-  background-color: #ffffff;
-  color: #000000;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  background-color: #030712;
+  color: #f8fafc;
+  overflow: hidden;
 }
 
-/* Custom Leaflet styles for e-ink vibe */
+/* Custom Leaflet Map Container & Attribution */
 .leaflet-container {
-  background: #f8f8f8 !important;
-}
-
-.leaflet-tile {
-  filter: grayscale(100%) contrast(120%) brightness(102%);
+  width: 100%;
+  height: 100%;
+  background: #030712 !important;
+  font-family: var(--font-mono) !important;
 }
 
 .leaflet-control-attribution {
-  background: rgba(255, 255, 255, 0.8) !important;
-  color: #000 !important;
+  background: rgba(0, 0, 0, 0.75) !important;
+  color: #94a3b8 !important;
   font-family: var(--font-mono) !important;
   font-size: 10px !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 2px !important;
+  padding: 2px 6px !important;
+}
+
+.theme-e-ink .leaflet-control-attribution {
+  background: rgba(255, 255, 255, 0.9) !important;
+  color: #000000 !important;
+  border: 2px solid #000000 !important;
+}
+
+/* Radar Beacon Ping Animation */
+@keyframes radar-ping {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.9;
+  }
+  60% {
+    transform: scale(2.4);
+    opacity: 0.15;
+  }
+  100% {
+    transform: scale(3.2);
+    opacity: 0;
+  }
+}
+
+.animate-radar-ping {
+  animation: radar-ping 2.2s cubic-bezier(0.1, 0.4, 0.6, 1) infinite;
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.65;
+  }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s ease-in-out infinite;
+}
+
+/* Custom DivIcons */
+.spacecraft-marker-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.spacecraft-radar-ring {
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.spacecraft-vessel {
+  position: relative;
+  z-index: 10;
+  transition: transform 0.15s ease-out;
+}
+
+/* High-Contrast Range Inputs */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+
+/* Chrome / Safari / Edge Range Thumb */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 18px;
+  width: 18px;
+  border-radius: 2px;
+  background: currentColor;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  margin-top: -6px;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+/* Firefox Range Thumb */
+input[type="range"]::-moz-range-thumb {
+  height: 18px;
+  width: 18px;
+  border-radius: 2px;
+  background: currentColor;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+input[type="range"]::-moz-range-thumb:hover {
+  transform: scale(1.2);
+}
+
+/* Track Styling */
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 6px;
+  cursor: pointer;
+  background: rgba(148, 163, 184, 0.25);
+  border-radius: 3px;
+}
+
+input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 6px;
+  cursor: pointer;
+  background: rgba(148, 163, 184, 0.25);
+  border-radius: 3px;
+}
+
+/* E-Ink specific range slider */
+.theme-e-ink input[type="range"]::-webkit-slider-runnable-track {
+  background: #e4e4e7;
+  border: 1px solid #000000;
+  height: 8px;
+}
+.theme-e-ink input[type="range"]::-webkit-slider-thumb {
+  background: #000000;
+  border: 2px solid #ffffff;
+  box-shadow: none;
+}
+
+/* Tactical & Mission HUD Scrollbars */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.35);
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.55);
+}
+
+.theme-e-ink .custom-scrollbar::-webkit-scrollbar-track {
+  background: #f4f4f5;
+  border-left: 2px solid #000000;
+}
+
+.theme-e-ink .custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #000000;
+  border-radius: 0;
 }

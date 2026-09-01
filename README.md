@@ -2,6 +2,8 @@
 
 ![Artemis Velocity Vis Demo](screenshots/demo.webp)
 
+> **Part of the [Cartography Featured Project](https://andrewvoirol.com/work/cartography) on [andrewvoirol.com](https://andrewvoirol.com) • [Live Interactive Lab](https://andrewvoirol.com/lab/artemis)**
+
 An interactive orbital mechanics laboratory and mission control simulator comparing true spherical great-circle geodesics with Web Mercator (EPSG:3857) planar chords at speeds from 500 mph (subsonic cruise) to 25,000 mph (Mach 32.58 atmospheric re-entry).
 
 ---
